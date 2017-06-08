@@ -1,0 +1,9 @@
+{
+  "name": "@ocode/components",
+  "version": "1.0.0",
+  "description": "OC UI Components",
+  "main": "index.js",
+  "repository": "git@github.com:observable-code/components.git",
+  "author": "Chris Biscardi <chris@christopherbiscardi.com>",
+  "license": "MIT"
+}
