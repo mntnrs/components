@@ -1,0 +1,9 @@
+{
+  "name": "@ocode/button",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Chris Biscardi <chris@christopherbiscardi.com>",
+  "license": "MIT",
+  "dependencies": {
+  }
+}

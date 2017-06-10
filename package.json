@@ -3,7 +3,23 @@
   "version": "1.0.0",
   "description": "OC UI Components",
   "main": "index.js",
+  "private": true,
   "repository": "git@github.com:observable-code/components.git",
   "author": "Chris Biscardi <chris@christopherbiscardi.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "postinstall": "npm run bootstrap",
+    "test": "lerna run test",
+    "test:updated": "npm run test -- $(lerna updated | grep ^- | grep -v private | sed 's/^- /--scope /g')"
+  },
+  "dependencies": {
+    "@storybook/react": "^3.0.1",
+    "lerna": "^2.0.0-rc.5",
+    "preact": "^8.1.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
 }
