@@ -8,18 +8,38 @@
   "author": "Chris Biscardi <chris@christopherbiscardi.com>",
   "license": "MIT",
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "postinstall": "npm run bootstrap",
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "lerna run test",
     "test:updated": "npm run test -- $(lerna updated | grep ^- | grep -v private | sed 's/^- /--scope /g')"
   },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@storybook/react": "^3.0.1",
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "emotion": "^1.0.6",
+    "fam": "^0.0.3",
+    "glam": "^4.0.4",
+    "husky": "^0.13.4",
     "lerna": "^2.0.0-rc.5",
+    "lint-staged": "^3.6.1",
     "preact": "^8.1.0",
+    "preact-compat": "^3.16.0",
+    "prettier": "^1.4.4",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "style-loader": "^0.18.2",
+    "system-font-css": "^1.1.0"
   }
 }

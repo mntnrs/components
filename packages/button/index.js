@@ -1,116 +1,176 @@
-import { css } from 'glamor';
-import { buttons } from '@ocode/constants';
+import { css } from "fam";
+import { h } from "preact";
+import { buttons, sizes } from "@ocode/constants/lib/buttons";
 
-const buttonF = ({
-  color,
-  backgroundColor,
-  borderColor,
+const sizeF = size => {
+  const { paddingY, paddingX, fontSize, lineHeight } =
+    sizes[size] || sizes.default;
+  return css({
+    paddingTop: paddingY,
+    paddingBottom: paddingY,
+    paddingLeft: paddingX,
+    paddingRight: paddingX,
+    fontSize: fontSize,
+    lineHeight: lineHeight
+  });
+};
 
-}) => css({
-    color: $color;
-    background-color: $backgroundColor;
-    border-color: $borderColor;
-
-    &:focus,
-    &:active,
-    &:hover {
-      color: $color;
-      background-color: color($backgroundColor blackness(+10%));
-      border-color: color($borderColor blackness(12%));
+const hoverCSS = ({ color, hoverBG, hoverBackgroundColor, hoverBorderColor }) =>
+  css({
+    color: color,
+    backgroundColor: hoverBackgroundColor,
+    borderColor: hoverBorderColor
+  });
+const disabledCSS = ({ backgroundColor, borderColor, disabledColor }) =>
+  css({
+    "&:hover": {
+      backgroundColor: backgroundColor,
+      borderColor: borderColor
+    },
+    "&:focus": {
+      backgroundColor: backgroundColor,
+      borderColor: borderColor
     }
-    &:active {
+  });
+const buttonF = variant => {
+  const {
+    color,
+    backgroundColor,
+    borderColor,
+    hoverBorderColor,
+    hoverBackgroundColor
+  } =
+    buttons[variant] || buttons["primary"];
+  return css({
+    color: color,
+    backgroundColor: backgroundColor,
+    borderColor: borderColor,
+
+    "&:focus": hoverCSS({ color, hoverBackgroundColor, hoverBorderColor }),
+    "&:active": hoverCSS({ color, hoverBackgroundColor, hoverBorderColor }),
+    "&:hover": hoverCSS({ color, hoverBackgroundColor, hoverBorderColor }),
+    "&:active": {
       /* Remove the gradient for the pressed/active state */
-      background-image: none;
-      box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
-    }
-    &:disabled,
-    fieldset[disabled] & {
-      &:hover,
-      &:focus {
-        background-color: $backgroundColor;
-        border-color: $borderColor;
+      backgroundImage: "none",
+      boxShadow: "inset 0 3px 5px rgba(0,0,0,.125)"
+    },
+    "&:disabled": disabledCSS({ backgroundColor, borderColor }),
+    "fieldset[disabled] &": disabledCSS({
+      backgroundColor,
+      borderColor
+    })
+  });
+};
+
+const ghostF = variant => {
+  const { borderColor, disabledColor } = buttons[variant] || buttons["primary"];
+  return css({
+    color: borderColor,
+    backgroundImage: "none",
+    backgroundColor: "transparent",
+    borderColor: borderColor,
+
+    "&:focus": {
+      color: "#fff",
+      backgroundColor: borderColor,
+      borderColor: borderColor
+    },
+    "&:active": {
+      color: "#fff",
+      backgroundColor: borderColor,
+      borderColor: borderColor
+    },
+    "&:hover": {
+      color: "#fff",
+      backgroundColor: borderColor,
+      borderColor: borderColor
+    },
+
+    "&:disabled": {
+      "&:hover": {
+        borderColor: disabledColor
+      },
+      "&:focus": {
+        borderColor: disabledColor
+      }
+    },
+    "fieldset[disabled] &": {
+      "&:hover": {
+        borderColor: disabledColor
+      },
+      "&:focus": {
+        borderColor: disabledColor
       }
     }
-  }
-`
+  });
+};
 
-export default const Button = emotion('button')`
-display: inline-block;
-font-weight: 400;
-text-align: center;
-white-space: nowrap;
-vertical-align: middle;
-touch-action: manipulation;
-cursor: pointer;
-user-select: none;
-border: .0625rem solid transparent;
-transition: all .2s ease-in-out;
-
-&:active:focus {
+const buttonCSS = css({
+  fontFamily: "system",
+  display: "inline-block",
+  fontWeight: 400,
+  textAlign: "center",
+  whiteSpace: "nowrap",
+  verticalAlign: "middle",
+  touchAction: "manipulation",
+  cursor: "pointer",
+  userSelect: "none",
+  border: ".0625rem solid transparent",
+  transition: "all .1s ease-out",
+  "&:active:focus": {
     /* Default */
-    outline: thin dotted;
+    outline: "thin dotted",
     /* WebKit */
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
+    outline: "5px auto -webkit-focus-ring-color",
+    outlineOffset: "-2px"
+  },
 
-&:hover,
-&:focus {
-    text-decoration: none;
-}
+  "&:hover": {
+    textDecoration: "none"
+  },
+  "&:focus": {
+    textDecoration: "none"
+  },
 
-&:active {
-    background-image: none;
-    outline: 0;
-    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
-}
+  "&:active": {
+    backgroundImage: "none",
+    outline: 0,
+    boxShadow: "inset 0 3px 5px rgba(0,0,0,.125)"
+  },
 
-&:disabled,
-fieldset[disabled] & {
-    cursor: not-allowed;
-    opacity: .65;
-    box-shadow: none;
-}
-
-
-
-  /* Ghost Variants */
-  .ghost-$(variant) {
-      color: $borderColor;
-      background-image: none;
-      background-color: transparent;
-      border-color: $borderColor;
-
-      &:focus,
-      &.focus,
-      &:active,
-      &.active,
-      &:hover,
-      .open > &.dropdown-toggle {
-          color: #fff;
-          background-color: $borderColor;
-          border-color: $borderColor;
-      }
-
-      &.disabled,
-      &:disabled,
-      fieldset[disabled] & {
-          &:hover,
-          &:focus,
-          &.focus {
-              border-color: lighten($borderColor, 20%);
-          }
-      }
+  "&:disabled": {
+    cursor: "not-allowed",
+    opacity: ".65",
+    boxShadow: "none"
+  },
+  "fieldset[disabled] &": {
+    cursor: "not-allowed",
+    opacity: ".65",
+    boxShadow: "none"
   }
-}
+});
 
-/* Sizes */
-@each $variant, $padding-x, $padding-y, $font-size, $line-height, $border-radius in ~fateElementButton.sizes {
-  .size-$(variant) {
-    padding: $padding-y $padding-x;
-    font-size: $font-size;
-    line-height: $line-height;
-    border-radius: $border-radius;
-  }
-}
-`
+export default ({
+  children,
+  circle,
+  className,
+  expand,
+  ghost,
+  size,
+  variant,
+  ...props
+}) => {
+  return (
+    <button
+      className={css(
+        buttonCSS,
+        ghost ? ghostF(variant) : buttonF(variant),
+        sizeF(size),
+        circle ? css({ borderRadius: "10em" }) : null
+      )}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
