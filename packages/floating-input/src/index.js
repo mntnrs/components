@@ -3,11 +3,13 @@ import { h, Component } from "preact";
 import colors from "@ocode/constants/lib/colors";
 
 const field = css({
-  position: "relative",
-  maxWidth: "250px"
+  boxSizing: "border-box",
+  position: "relative"
 });
 
 const fieldLabel = css({
+  boxSizing: "border-box",
+  fontFamily: "system",
   color: "#919293",
   boxSizing: "border-box",
   display: "block",
@@ -34,6 +36,7 @@ const fieldLabel = css({
 });
 
 const fieldInput = css({
+  boxSizing: "border-box",
   backgroundColor: "#f5f5f5",
   border: "2px solid #e9e9e9",
   color: "#333",
@@ -75,14 +78,13 @@ export default class Input extends Component {
   state = {
     active: false
   };
-  onChange = e => {
+  onInput = e => {
     this.setState(({ active }) => ({
       active: !!e.currentTarget.value
     }));
   };
   render() {
     const { className, label, ...props } = this.props;
-    console.log(this.state.active);
     const classes = this.state.active && "field--not-empty";
     return (
       <div className={`${field} ${classes}`}>
@@ -91,7 +93,7 @@ export default class Input extends Component {
           className={fieldInput}
           type="text"
           placeholder={label}
-          onInput={this.onChange}
+          onInput={this.onInput}
           {...props}
         />
       </div>

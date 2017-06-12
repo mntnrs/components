@@ -2,10 +2,13 @@
   "name": "@ocode/floating-input",
   "version": "1.0.0",
   "description": "Floating input",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/observable-code/components",
   "author": "Chris Biscardi <chris@christopherbiscardi.com",
   "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps"
+  },
   "dependencies": {
     "@ocode/constants": "*"
   }

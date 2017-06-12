@@ -5,7 +5,7 @@ import { h, render, Component } from "preact";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import Input from "./src";
+import LoginForm from "./src";
 import { css } from "fam";
 
 const buttonHolder = css({
@@ -17,11 +17,4 @@ const buttonHolder = css({
 const header = css({
   fontFamily: "system"
 });
-storiesOf("Input", module).add("usage", () =>
-  <div>
-    <h1 className={header}>Variants</h1>
-    <div className={buttonHolder}>
-      <Input label="Email" />
-    </div>
-  </div>
-);
+storiesOf("LoginForm", module).add("usage", () => <LoginForm />);

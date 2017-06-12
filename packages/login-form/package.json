@@ -1,5 +1,5 @@
 {
-  "name": "@ocode/button",
+  "name": "@ocode/login-form",
   "version": "1.0.0",
   "main": "lib/index.js",
   "author": "Chris Biscardi <chris@christopherbiscardi.com>",
@@ -8,6 +8,7 @@
     "build": "babel src --out-dir lib --source-maps"
   },
   "dependencies": {
-    "@ocode/constants": "*"
+    "@ocode/button": "*",
+    "@ocode/floating-input": "*"
   }
 }
