@@ -3,10 +3,13 @@ import { h, Component } from "preact";
 import Button from "@ocode/button";
 import Input from "@ocode/floating-input";
 
-css.insert("body { background-color: #efefef; }");
+css.insert("body { background-color: #FBFBFF; }");
 const card = css({
   backgroundColor: "white",
-  padding: "1rem"
+  padding: "1rem",
+  '&*': {
+    marginBottom: '1rem'
+  }
 });
 
 export default class LoginForm extends Component {
@@ -15,7 +18,6 @@ export default class LoginForm extends Component {
     password: ""
   };
   onChange = name => e => {
-    console.log(name, e);
     this.setState(state => ({
       ...state,
       [name]: e.target.value

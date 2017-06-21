@@ -10,7 +10,7 @@ const field = css({
 const fieldLabel = css({
   boxSizing: "border-box",
   fontFamily: "system",
-  color: "#919293",
+  color: colors.brand,
   boxSizing: "border-box",
   display: "block",
   fontSize: ".8125em",
@@ -24,7 +24,7 @@ const fieldLabel = css({
   top: 0,
   textAlign: "left",
   transform: "translateY(3px)",
-  transition: "all .2s ease-out",
+  transition: "all .1s ease-out",
   userSelect: "none",
   whiteSpace: "nowrap",
   width: "100%",
@@ -37,19 +37,22 @@ const fieldLabel = css({
 
 const fieldInput = css({
   boxSizing: "border-box",
-  backgroundColor: "#f5f5f5",
+  backgroundColor: "transparent",
   border: "2px solid #e9e9e9",
   color: "#333",
   fontSize: "1.3125em",
   padding: ".4761904762em",
-  transition: "all .2s ease-out",
+  transition: "all .1s ease-out",
   width: "100%",
   "&:hover": {
-    boxShadow: "inset 0 0 10px 0 rgba(85, 85, 85, .1)",
+//    boxShadow: `inset 0 0 10px 0 ${colors.brand}`,
+    borderColor: colors.brand,
     outline: 0
   },
   "&:focus": {
-    boxShadow: "inset 0 0 10px 0 rgba(85, 85, 85, .1)",
+//    boxShadow: "inset 0 0 10px 0 rgba(85, 85, 85, .1)",
+    borderColor: colors.brand,
+    color: colors.brand,
     outline: 0
   },
   ".field--not-empty &": {
@@ -90,6 +93,7 @@ export default class Input extends Component {
       <div className={`${field} ${classes}`}>
         <label className={fieldLabel}>{label}</label>
         <input
+          aria-label={label}
           className={fieldInput}
           type="text"
           placeholder={label}

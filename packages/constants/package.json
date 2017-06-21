@@ -10,6 +10,7 @@
     "build": "babel src --out-dir lib --source-maps"
   },
   "dependencies": {
+    "colors.css": "^3.0.0",
     "polished": "^1.1.3"
   }
 }
