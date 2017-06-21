@@ -41,6 +41,7 @@
     "prettier": "^1.4.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "storybook-addon-a11y": "^3.0.0",
     "style-loader": "^0.18.2",
     "system-font-css": "^1.1.0"
   }

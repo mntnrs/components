@@ -46,7 +46,7 @@
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
-"@storybook/react@^3.0.1":
+"@storybook/react@^3.0.0", "@storybook/react@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.0.1.tgz#9d6c3ddfdca22d9e7c4baedd82fa9d9a230e8770"
   dependencies:
@@ -378,6 +378,10 @@ aws-sign2@~0.6.0:
 aws4@^1.2.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+
+axe-core@^2.0.7:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-2.3.1.tgz#be87acabe8c2c6a979761ea7c2b423791fb32f3f"
 
 babel-cli@^6.24.1:
   version "6.24.1"
@@ -5520,6 +5524,14 @@ standalone-react-addons-pure-render-mixin@^0.1.1:
 "statuses@>= 1.3.1 < 2", statuses@~1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
+
+storybook-addon-a11y@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/storybook-addon-a11y/-/storybook-addon-a11y-3.0.0.tgz#0320c22d73db20a32788bb2ebcc1494a11129abf"
+  dependencies:
+    "@storybook/react" "^3.0.0"
+    axe-core "^2.0.7"
+    prop-types "^15.5.10"
 
 stream-browserify@^2.0.1:
   version "2.0.1"
