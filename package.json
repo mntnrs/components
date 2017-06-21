@@ -14,7 +14,8 @@
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "lerna run test",
-    "test:updated": "npm run test -- $(lerna updated | grep ^- | grep -v private | sed 's/^- /--scope /g')"
+    "test:updated": "npm run test -- $(lerna updated | grep ^- | grep -v private | sed 's/^- /--scope /g')",
+    "plop": "plop"
   },
   "lint-staged": {
     "*.{js,jsx}": [

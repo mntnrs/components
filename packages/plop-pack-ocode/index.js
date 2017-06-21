@@ -31,7 +31,8 @@ module.exports = function(plop) {
           }
           return "name is required";
         }
-      }, {
+      },
+      {
         type: "input",
         name: "description",
         message: "What does this component do?",
@@ -57,7 +58,7 @@ module.exports = function(plop) {
       {
         type: "add",
         path: "packages/{{dashCase name}}/stories.js",
-        templateFile: "templates/stories.js.tpl"
+        templateFile: "templates/stories.tpl"
       }
     ]
   });
