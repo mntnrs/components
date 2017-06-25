@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    steps:
+      - checkout
+      - run: yarn
+      - run: npm run bootstrap
+      - run: npm test
+    docker:
+      - image: node:8
+  
