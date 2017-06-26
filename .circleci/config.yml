@@ -3,6 +3,7 @@ jobs:
   build:
     working_directory: ~/app
     steps:
+      - run: git config --global push.default simple
       - checkout
       - run: yarn
       - run: yarn run bootstrap
