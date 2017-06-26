@@ -4,9 +4,9 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
-      - run: npm i
-      - run: npm run bootstrap
-      - run: npm test
+      - run: yarn
+      - run: yarn run bootstrap
+      - run: yarn test
     docker:
       - image: node:8
   
