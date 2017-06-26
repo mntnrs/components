@@ -7,6 +7,9 @@ jobs:
       - run: yarn
       - run: yarn run bootstrap
       - run: yarn test
+      - run: yarn lerna-semantic-release -- pre
+      - run: yarn lerna-semantic-release -- perform
+      - run: yarn run changelog
     docker:
       - image: node:7
   
