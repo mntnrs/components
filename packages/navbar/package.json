@@ -1,6 +1,6 @@
 {
   "name": "@ocode/navbar",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generic horizontal top bar navigation",
   "main": "lib/index.js",
   "author": "Chris Biscardi <chris@christopherbiscardi.com",
