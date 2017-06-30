@@ -11,7 +11,11 @@ jobs:
       - run: git config --global user.email "chris+ocode-npm-bot@christopherbiscardi.com"
       - run: git config --global user.name "OCode Bot"
       - run: yarn lerna-semantic-release -- pre
-      - run: yarn lerna-semantic-release -- perform
+      - run:
+          name: NPM Publish
+          command: |
+            npm whoami
+            ./node_modules/.bin/lerna-semantic-release perform
       - run: yarn run changelog
     docker:
       - image: node:7
