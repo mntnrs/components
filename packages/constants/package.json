@@ -1,6 +1,6 @@
 {
   "name": "@ocode/constants",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Constants that can be inlined across projects",
   "main": "index.js",
   "repository": "https://github.com/observable-code/components",
