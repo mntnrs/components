@@ -1,6 +1,6 @@
 {
   "name": "@ocode/plop-pack-ocode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Scaffolding for new packages in this repo",
   "main": "index.js",
   "author": "Chris Biscardi <chris@christopherbiscardi.com",
