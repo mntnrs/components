@@ -1,6 +1,6 @@
 {
   "name": "@ocode/navbar",
-  "version": "2.0.0",
+  "version": "1.0.1",
   "description": "Generic horizontal top bar navigation",
   "main": "lib/index.js",
   "author": "Chris Biscardi <chris@christopherbiscardi.com",
@@ -9,10 +9,10 @@
     "build": "babel src --out-dir lib --source-maps"
   },
   "dependencies": {
-    "@ocode/constants": "*"
+    "@ocode/constants": "^1.0.1"
   },
   "devDependencies": {
-    "preact-router": "^2.5.2",
-    "preact": "*"
+    "preact": "*",
+    "preact-router": "^2.5.2"
   }
 }
