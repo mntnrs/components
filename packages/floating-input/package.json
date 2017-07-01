@@ -1,6 +1,6 @@
 {
   "name": "@ocode/floating-input",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Floating input",
   "main": "lib/index.js",
   "repository": "https://github.com/observable-code/components",
