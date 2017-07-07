@@ -6,7 +6,8 @@
   "author": "Chris Biscardi <chris@christopherbiscardi.com",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib --source-maps"
+    "build": "babel src --out-dir lib --source-maps",
+    "build:watch": "babel src --out-dir lib --source-maps --watch"
   },
   "dependencies": {
     "@ocode/constants": "*"
