@@ -10,7 +10,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "build:watch": "lerna run watch",
+    "build:watch": "lerna run build:watch",
     "build:storybook": "echo 'implement storybook static build' && exit 0",
     "changelog": "lerna-changelog",
     "plop": "plop",
@@ -44,7 +44,7 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.4",
-    "emotion": "^5.0.0",
+    "emotion": "^6.0.3",
     "fam": "^0.0.3",
     "husky": "^0.13.4",
     "lerna": "^2.0.0-rc.5",
