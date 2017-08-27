@@ -2,8 +2,9 @@ version: 2
 jobs:
   build:
     working_directory: ~/app
+    docker:
+      - image: node:7
     steps:
-      - run: git config --global push.default simple
       - checkout
       - run: yarn
       - run: yarn run bootstrap
@@ -11,7 +12,11 @@ jobs:
       - run: yarn test
   publish:
     working_directory: ~/app
+    docker:
+      - image: node:7
     steps:
+      - run: git config --global push.default simple
+      - run: checkout
       - run:
           name: Configure git for publishing
           command: |
@@ -24,8 +29,6 @@ jobs:
             mv ./ci/npmrc .npmrc
             ./node_modules/.bin/lerna-semantic-release perform
       - run: yarn run changelog
-    docker:
-      - image: node:7
 workflows:
   version: 2
   build_and_publish:
