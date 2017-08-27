@@ -1,4 +1,7 @@
 module.exports = {
+  devServer: {
+    stats: "errors-only"
+  },
   resolve: {
     extensions: [".js", "jsx"],
     alias: {

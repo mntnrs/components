@@ -50,3 +50,16 @@ app.
 git clone observable-code/app packages/x-app
 npm run bootstrap
 ```
+
+# Templating New Components
+
+There is tooling to scaffold new components, which uses
+[plop][plop]. Find more information about what generators exist in the
+[plop-pack-ocode readme][plop-pack-ocode]
+
+```
+yarn plop
+```
+
+[plop]: https://github.com/amwmedia/plop
+[plop-pack-ocode]: ./packages/plop-pack-ocode/README.md
