@@ -5,9 +5,7 @@
   "author": "Chris Biscardi <chris@christopherbiscardi.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib --source-maps",
-    "build:watch": "babel src --out-dir lib --source-maps --watch",
-    "mv:css": "find ./src -name \\*.emotion.css -exec mv {} lib \\;"
+    "build": "babel src --out-dir lib --source-maps"
   },
   "dependencies": {
     "@ocode/constants": "^1.0.1"

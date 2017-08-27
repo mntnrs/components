@@ -1,0 +1,16 @@
+{
+  "name": "@ocode/buttons",
+  "version": "1.0.0",
+  "description": "Collection of design-system buttons",
+  "main": "lib/index.js",
+  "author": "Chris Biscardi <chris@christopherbiscardi.com",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps",
+    "build:watch": "babel src --out-dir lib --source-maps --watch"
+  },
+  "dependencies": {
+    "@ocode/constants": "*",
+    "@ocode/button": "*"
+  }
+}
