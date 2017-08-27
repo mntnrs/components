@@ -7,8 +7,7 @@
   "author": "Chris Biscardi <chris@christopherbiscardi.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib --source-maps",
-    "build:watch": "babel src --out-dir lib --source-maps --watch"
+    "build": "babel src --out-dir lib --source-maps"
   },
   "dependencies": {
     "colors.css": "^3.0.0",
