@@ -5,7 +5,7 @@ import { h, render, Component } from "preact";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import {{pascalCase name}} from ".";
+import {{pascalCase name}} from "./src";
 import { css } from "fam";
 
 storiesOf("{{pascalCase name}}", module).add("usage", () =>
