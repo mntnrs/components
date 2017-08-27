@@ -9,8 +9,12 @@ jobs:
       - run: yarn run bootstrap
       - run: yarn run build
       - run: yarn test
-      - run: git config --global user.email "chris+ocode-npm-bot@christopherbiscardi.com"
-      - run: git config --global user.name "OCode Bot"
+  publish:
+      - run:
+          name: Configure git for publishing
+          command: |
+            git config --global user.email "chris+ocode-npm-bot@christopherbiscardi.com"
+            git config --global user.name "OCode Bot"
       - run: yarn lerna-semantic-release -- pre
       - run:
           name: NPM Publish
@@ -20,4 +24,14 @@ jobs:
       - run: yarn run changelog
     docker:
       - image: node:7
-  
+workflows:
+  version: 2
+  build_and_publish:
+    jobs:
+      - build
+      - publish:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
