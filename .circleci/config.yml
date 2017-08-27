@@ -10,6 +10,8 @@ jobs:
       - run: yarn run build
       - run: yarn test
   publish:
+    working_directory: ~/app
+    steps:
       - run:
           name: Configure git for publishing
           command: |
