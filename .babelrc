@@ -1,7 +1,11 @@
 {
-  "presets": [ "es2017", "stage-0" ],
+  "presets": [["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 7"]
+      }
+    }], "stage-0" ],
   "plugins": [
-    "emotion/babel",
+    "emotion",
     [ "transform-react-jsx", { "pragma": "h" }]
   ]
 }
